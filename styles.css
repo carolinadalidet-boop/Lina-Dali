@@ -1,0 +1,652 @@
+/* ============================================
+   VARIABLES Y COLORES BASE
+   ============================================ */
+:root {
+    --primary-pink: #E14290;
+    --primary-coral: #E8423B;
+    --primary-yellow: #FBE216;
+    --primary-turquoise: #00AF9A;
+    --primary-green: #009757;
+    --primary-purple: #7E65AA;
+    --primary-black: #030300;
+    
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-open-sans: 'Open Sans', sans-serif;
+}
+
+/* ============================================
+   ESTILOS GENERALES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-open-sans);
+    color: var(--primary-black);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+    padding: 1rem 0;
+}
+
+.brand-text {
+    font-family: var(--font-montserrat);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-black);
+}
+
+.navbar-nav .nav-link {
+    font-family: var(--font-open-sans);
+    font-weight: 600;
+    color: var(--primary-black) !important;
+    margin-left: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-pink) !important;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 3, 0, 0.5);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+}
+
+.btn-cta {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-pink) 0%, var(--primary-coral) 100%);
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-coral) 0%, var(--primary-pink) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(225, 66, 144, 0.3);
+}
+
+.btn-secondary {
+    background: var(--primary-turquoise);
+    border: none;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 175, 154, 0.3);
+}
+
+.urgency-message {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(251, 226, 22, 0.2);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-yellow);
+}
+
+/* ============================================
+   SECCIONES
+   ============================================ */
+.section-light {
+    background-color: #f8f9fa;
+}
+
+.section-dark {
+    background: linear-gradient(135deg, var(--primary-black) 0%, #1a1a17 100%);
+    color: white;
+}
+
+.section-accent {
+    background: linear-gradient(135deg, var(--primary-turquoise) 0%, var(--primary-green) 100%);
+    color: white;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-light .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-pink), var(--primary-coral));
+    border-radius: 2px;
+}
+
+.section-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--primary-black);
+}
+
+.section-dark .section-text {
+    color: #e0e0e0;
+}
+
+/* ============================================
+   TARJETAS DE SERVICIOS
+   ============================================ */
+.service-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(225, 66, 144, 0.2);
+}
+
+.service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-content-full {
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    min-height: 300px;
+}
+
+.service-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-pink);
+}
+
+.service-content-full .service-title {
+    color: white;
+}
+
+.service-description {
+    font-size: 0.95rem;
+    color: #666;
+    flex-grow: 1;
+}
+
+.service-content-full .service-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.service-icon {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin-top: 1rem;
+}
+
+/* ============================================
+   TARJETAS DE BENEFICIOS
+   ============================================ */
+.benefit-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-top: 4px solid transparent;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    border-top-color: var(--primary-pink);
+    box-shadow: 0 10px 30px rgba(225, 66, 144, 0.15);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.benefit-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-pink);
+    margin-bottom: 1rem;
+}
+
+.benefit-text {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ============================================
+   TARJETAS DE RESULTADOS
+   ============================================ */
+.result-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.result-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-yellow);
+    transform: translateY(-5px);
+}
+
+.result-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.result-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.result-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================
+   TARJETAS DE TESTIMONIOS
+   ============================================ */
+.testimonial-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid var(--primary-pink);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 10px 30px rgba(225, 66, 144, 0.15);
+    transform: translateY(-5px);
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--primary-pink);
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   SOSTENIBILIDAD
+   ============================================ */
+.sustainability-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.sustainability-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.sustainability-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+
+.sustainability-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-yellow);
+    margin-bottom: 0.5rem;
+}
+
+.sustainability-label {
+    display: block;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 600;
+}
+
+/* ============================================
+   MÉTODOS DE CONTACTO
+   ============================================ */
+.contact-method {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-yellow);
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.contact-link {
+    color: var(--primary-yellow);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.95rem;
+}
+
+.contact-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* ============================================
+   URGENCY BANNER
+   ============================================ */
+.urgency-banner {
+    padding: 1.5rem;
+    background: rgba(251, 226, 22, 0.15);
+    border-radius: 10px;
+    border: 2px solid var(--primary-yellow);
+}
+
+/* ============================================
+   TRUST SEAL
+   ============================================ */
+.trust-seal {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    background-color: var(--primary-black);
+    color: white;
+}
+
+footer h5 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-pink);
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-pink);
+}
+
+.social-links a {
+    text-decoration: none;
+}
+
+/* ============================================
+   MODALES
+   ============================================ */
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-pink) 0%, var(--primary-coral) 100%);
+    border: none;
+}
+
+.modal-content {
+    border-radius: 15px;
+    border: none;
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    font-family: var(--font-open-sans);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 0.2rem rgba(225, 66, 144, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--primary-black);
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .btn-cta {
+        width: 100%;
+    }
+
+    .sustainability-box {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar-nav .nav-link {
+        margin-left: 0;
+        padding: 0.5rem 0;
+    }
+
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .benefit-card, .testimonial-card, .contact-method {
+        padding: 1.5rem;
+    }
+
+    .sustainability-number {
+        font-size: 2rem;
+    }
+
+    .service-image {
+        height: 150px;
+    }
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ============================================
+   UTILIDADES
+   ============================================ */
+.text-white-50 {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+.shadow {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-3 {
+    border-radius: 1rem;
+}
+
